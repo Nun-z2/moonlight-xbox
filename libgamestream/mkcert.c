@@ -27,6 +27,8 @@
 #include <openssl/engine.h>
 #endif
 
+#pragma warning(disable : 4996)
+
 static const int NUM_BITS = 2048;
 static const int SERIAL = 0;
 static const int NUM_YEARS = 10;
@@ -40,7 +42,10 @@ CERT_KEY_PAIR mkcert_generate() {
     EVP_PKEY *pkey = NULL;
     PKCS12 *p12 = NULL;
 
-    CRYPTO_mem_ctrl(CRYPTO_MEM_CHECK_ON);
+    #ifdef CRYPTO_MEM_CHECK_ON
+        CRYPTO_mem_ctrl(CRYPTO_MEM_CHECK_ON);
+    #endif
+
     //bio_err = BIO_new_fp(stderr, BIO_NOCLOSE);
 
     OpenSSL_add_all_algorithms();

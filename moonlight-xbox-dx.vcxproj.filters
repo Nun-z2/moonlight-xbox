@@ -201,9 +201,6 @@
     <CopyFileToFolders Include="vcpkg\installed\x64-uwp\bin\libssl-1_1-x64.dll">
       <Filter>DLLs</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="vcpkg\installed\x64-uwp\bin\libx264-163.dll">
-      <Filter>DLLs</Filter>
-    </CopyFileToFolders>
     <CopyFileToFolders Include="vcpkg\installed\x64-uwp\bin\postproc-55.dll">
       <Filter>DLLs</Filter>
     </CopyFileToFolders>

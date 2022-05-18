@@ -49,6 +49,8 @@
 #define UNIQUEID_BYTES 8
 #define UNIQUEID_CHARS (UNIQUEID_BYTES*2)
 
+#pragma warning(disable : 4996)
+
 static char unique_id[UNIQUEID_CHARS+1];
 static X509 *cert;
 static char cert_hex[4096];
