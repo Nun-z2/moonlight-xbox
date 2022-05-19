@@ -113,7 +113,7 @@ bool FramePacer::PrepareFrameForRendering() {
 	if (decodeIndex - nextIndex >= 0) {
 		int i = nextIndex % queueSize;
 		VideoFrame nextFrame = frames[i];
-		HRESULT status = nextFrame.renderMutex->AcquireSync(1, INFINITE);
+		HRESULT status = nextFrame.renderMutex->AcquireSync(1, 500);
 		if (status == S_OK) {
 			renderIndex = nextIndex;
 			return true;
